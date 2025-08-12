@@ -2,7 +2,7 @@
 
 IndexAI automatically builds a clickable, searchable index of your user prompts in any ChatGPT conversation. Quickly navigate, filter, and export your conversation outline to Markdown or TXT.
 
-Version: 1.1.0
+Version: 1.1.0 (Beta)
 
 Now includes a full-screen overlay panel and a draggable floating button (FAB) to open/close it.
 
