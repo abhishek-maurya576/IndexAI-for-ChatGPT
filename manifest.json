@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "IndexAI for ChatGPT",
+  "description": "Automatically indexes your user prompts in ChatGPT conversations: search, navigate, and export.",
+  "version": "0.1.0",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "*://chat.openai.com/*",
+    "*://chatgpt.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://chat.openai.com/*", "*://chatgpt.com/*"],
+      "js": ["content.js"],
+      "css": ["style.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_title": "IndexAI"
+  }
+}
+

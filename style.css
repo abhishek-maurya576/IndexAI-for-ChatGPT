@@ -1,0 +1,157 @@
+/* IndexAI Sidebar Styles */
+
+:root {
+  --indexai-bg: #ffffff;
+  --indexai-fg: #111827;
+  --indexai-border: #e5e7eb;
+  --indexai-muted: #6b7280;
+  --indexai-accent: #7c3aed;
+  --indexai-accent-contrast: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --indexai-bg: rgba(17, 24, 39, 0.95);
+    --indexai-fg: #e5e7eb;
+    --indexai-border: #374151;
+    --indexai-muted: #9ca3af;
+    --indexai-accent: #8b5cf6;
+    --indexai-accent-contrast: #0b0b0b;
+  }
+}
+
+#indexai-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100vh;
+  background: var(--indexai-bg);
+  color: var(--indexai-fg);
+  border-left: 1px solid var(--indexai-border);
+  z-index: 2147483647; /* above most UI */
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(4px);
+  box-shadow: -6px 0 18px rgba(0,0,0,0.15);
+}
+
+#indexai-panel.collapsed {
+  transform: translateX(280px);
+}
+
+.indexai-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--indexai-border);
+}
+
+.indexai-title {
+  font-weight: 700;
+}
+
+.indexai-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.indexai-btn {
+  appearance: none;
+  border: 1px solid var(--indexai-border);
+  background: transparent;
+  color: var(--indexai-fg);
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.indexai-btn:hover {
+  border-color: var(--indexai-accent);
+  color: var(--indexai-accent);
+}
+
+.indexai-btn.danger:hover {
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+.indexai-btn.ghost {
+  border: none;
+}
+
+.indexai-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--indexai-border);
+}
+
+.indexai-search {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--indexai-border);
+  background: transparent;
+  color: var(--indexai-fg);
+}
+
+.indexai-status {
+  font-size: 12px;
+  color: var(--indexai-muted);
+}
+
+.indexai-list {
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  overflow: auto;
+  height: 100%;
+}
+
+.indexai-item {
+  margin: 4px 0;
+}
+
+.indexai-item-btn {
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--indexai-fg);
+  cursor: pointer;
+}
+
+.indexai-item-btn:hover {
+  border-color: var(--indexai-border);
+  background: rgba(125, 125, 125, 0.06);
+}
+
+.indexai-item-time {
+  font-size: 11px;
+  color: var(--indexai-muted);
+  margin-right: 6px;
+}
+
+.indexai-item-text {
+  font-size: 13px;
+}
+
+/* Flash highlight on jump */
+.indexai-flash {
+  animation: indexai-pulse 1.2s ease-out;
+}
+
+@keyframes indexai-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.6); }
+  70% { box-shadow: 0 0 0 12px rgba(139, 92, 246, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+}
+
+
