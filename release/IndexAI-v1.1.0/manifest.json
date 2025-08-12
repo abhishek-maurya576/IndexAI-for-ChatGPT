@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "IndexAI for ChatGPT",
+  "description": "Automatically indexes your user prompts in ChatGPT conversations: search, navigate, and export.",
+  "version": "1.1.0",
+  "icons": {
+    "16": "images/IndexAI_icon.png",
+    "32": "images/IndexAI_icon.png",
+    "48": "images/IndexAI_icon.png",
+    "128": "images/IndexAI_icon.png"
+  },
+  "permissions": ["storage"],
+  "host_permissions": [
+    "*://chat.openai.com/*",
+    "*://chatgpt.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://chat.openai.com/*", "*://chatgpt.com/*"],
+      "js": ["content.js"],
+      "css": ["style.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_title": "IndexAI",
+    "default_icon": {
+      "16": "images/IndexAI_icon.png",
+      "32": "images/IndexAI_icon.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["images/IndexAI_icon.png"],
+      "matches": ["*://chat.openai.com/*", "*://chatgpt.com/*"]
+    }
+  ]
+}
+
